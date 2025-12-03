@@ -9,6 +9,31 @@ use Illuminate\Support\Facades\Route;
 | 1. Routes Publiques (Catalogue & Accueil - T4)
 |--------------------------------------------------------------------------
 */
+// CONTACT
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+// ABOUT
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+// TERMS & CONDITIONS
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');
+
+// BLOG (liste des articles)
+Route::get('/blog', function () {
+    return view('blog.index');
+})->name('blog.index');
+
+// BLOG (article individuel si tu veux)
+Route::get('/blog/{slug}', function ($slug) {
+    return view('blog.show', compact('slug'));
+})->name('blog.show');
+
 
 // Page d'accueil (Route: /)
 Route::get('/', function () {
@@ -16,10 +41,13 @@ Route::get('/', function () {
 })->name('home');
 
 // Catalogue de produits (Route: /catalogue)
-Route::get('/catalogue', [ProductController::class, 'index'])->name('products.index');
 
-// Fiche produit détaillée (Route: /produit/{product})
-Route::get('/produit/{product}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/catalogue', [ProductController::class, 'index'])
+    ->name('products.index');
+
+Route::get('/produit/{slug}', [ProductController::class, 'show'])
+    ->name('products.show');
+
 
 
 /*
