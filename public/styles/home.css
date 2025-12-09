@@ -1,0 +1,408 @@
+header{
+    box-shadow: 4px 0 4px rgb(0, 0, 0, 0.15);
+}
+body{
+    background-color: white;
+}
+main{
+    margin-top: 2rem;
+}
+main .container{
+    display: block;
+    margin: 0 auto;
+}
+.hero-section{
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1rem;
+    height: 32rem;
+    grid-template-areas:
+    "first first first first first first fourth fourth fourth"
+    "first first first first first first fourth fourth fourth"
+    "first first first first first first fourth fourth fourth"
+    "first first first first first first fourth fourth fourth"
+    "first first first first first first fifth fifth fifth"
+    "first first first first first first fifth fifth fifth"
+    "second second second third third third fifth fifth fifth"
+    "second second second third third third fifth fifth fifth"
+    "second second second third third third fifth fifth fifth"
+}
+.hero-section .second-box{
+    background-image: url('images/card-1.jpg');
+}
+.hero-section .third-box{
+    background-image: url('images/card-2.jpg');
+}
+.hero-section .fourth-box{
+    background-image: url('images/card-3.jpg');
+}
+.hero-section .fifth-box{
+    background-image: url('images/card-1.jpg');
+}
+.hero-section > div{
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.hero-section .first-box{
+    padding: 2rem 2rem;
+    background-color: var(--bg);
+    display: flex;
+}
+.hero-section .first-box > div{
+    width: 50%;
+}
+.hero-section .first-box .first-box-first h2{
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+.hero-section .first-box .first-box-first h2 span{
+    color: var(--accent-light);
+    position: relative;
+}
+.hero-section .first-box .first-box-first h2 span::after{
+    content: '';
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 50px;
+    border-radius: 50%;
+    border-top: 4px solid var(--accent-light);
+}
+.hero-section .first-box .first-box-first p{
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+.hero-section .first-box .first-box-first div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.hero-section .first-box .first-box-first div a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    width: 10rem;
+    color: white;
+    font-weight: bold;
+}
+.hero-section .first-box .first-box-first div .btn-hero-action-1{
+    background-color: var(--accent);
+}
+.hero-section .first-box .first-box-first div .btn-hero-action-1:hover{
+    background-color: var(--accent-light);
+}
+.hero-section .first-box .first-box-first div .btn-hero-action-2{
+    background-color: white;
+    color: black;
+}
+.hero-section .first-box .first-box-first div .btn-hero-action-2:hover{
+    background-color: black;
+    color: white;
+}
+.hero-section .first-box .first-box-second img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-section .second-box div, .hero-section .third-box div{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.hero-section .fourth-box {
+    padding: 1rem 1rem;
+}
+.hero-section .fourth-box p{
+    max-width: 75%;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.hero-section .fourth-box a{
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.5rem 0.5rem;
+    background-color: var(--text);
+    color: var(--bg-light);
+}
+.hero-section .fifth-box div {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+}
+.hero-section .fifth-box p{
+    font-weight: bold;
+    font-size: 1.55rem;
+}
+.hero-section .fifth-box a{
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent);
+    color: white;
+}
+
+.awards-section{
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(1, 3.5rem);
+    grid-template-columns: repeat(4, minmax(200px, 250px));
+    gap: 1rem;
+    padding: 1.5rem 0.5rem;
+}
+.awards-section .award{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid var(--text-muted);
+}
+.awards-section .award div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    font-size: 0.85rem;
+}
+.awards-section .award div:nth-child(2) span:first-child{
+    font-weight: bold;
+}
+.awards-section .award div:nth-child(2) span:last-child{
+    color: var(--text-muted);
+}
+
+.present-section{
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+    display: flex;
+    gap: 5%;
+}
+.present-section > div{
+    flex: 1;
+}
+.present-section .illustration-box{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.present-section .illustration-box img{
+    max-width: 480px;
+    width: 100%;
+    object-fit: cover;
+}
+.present-section .present-content h2{
+    margin-bottom: 2rem;
+    font-size: 2.25rem;
+}
+.present-section .present-content h2 span{
+    color: var(--accent-light);
+}
+.present-section .present-content p{
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+.present-section .present-content .present-options{
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.present-section .present-options a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    width: 10rem;
+    font-weight: bold;
+}
+.present-section .present-options .btn-present-action-1{
+    background-color: var(--accent);
+    border: 2px solid var(--accent);
+    color: white;
+}
+.present-section .present-options .btn-present-action-1:hover{
+    background-color: var(--accent-light);
+    border: 2px solid var(--accent-light);
+}
+.present-section .present-options .btn-present-action-2{
+    background-color: black;
+    color: white;
+}
+.present-section .present-options .btn-present-action-2:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.services-section h2{
+    margin: 1rem 0 2rem 0;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.services{
+    display: grid;
+    grid-template-rows: repeat(2, 360px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.services .service{
+    background-color: var(--bg-light);
+    box-shadow: 1px 1px 5px rgba(87, 87, 87, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+.services .service > div {
+    width: 100%;
+    height: 220px;
+}
+.services .service > div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.services .service p{
+    padding: 0.5rem 0.5rem;
+    flex: 1;
+}
+.services .service p span{
+    display: inline-block;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+}
+.services .service .btn-see-more{
+    display: inline-block;
+    padding: 1rem 1rem;
+    background-color: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.services .service .btn-see-more:hover{
+    background-color: var(--accent-light);
+}
+
+.testimonies-section{
+    padding: 0 10%;
+    margin: 2rem 0;
+}
+.testimonies-section h2{
+    margin: 1rem 0 2rem 0;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.testimonies{
+    display: grid;
+    grid-template-rows: 250px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.testimonies .testimony{
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(87, 87, 87, 0.5);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+.testimony img{
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+}
+.testimony p{
+    text-align: center;
+}
+.testimony .stars{
+    color: rgb(255, 217, 0);
+}
+.testimony .user{
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.sponsors-section{
+    background-color: white;
+    padding: 1rem 0;
+}
+.sponsors-section h2{
+    margin: 1rem 0 2rem 0;
+    font-size: 2.2rem;
+    text-align: center;
+}
+.sponsors{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 180px);
+    grid-template-rows: repeat(2, 48px);
+    gap: 1.5rem;
+}
+.sponsors .sponsor img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mode clair par défaut */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mode sombre appliqué à tout le body */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* S'assurer que tous les éléments héritent la couleur et fond */
+body.dark-mode *, 
+body.dark-mode a, 
+body.dark-mode button, 
+body.dark-mode input, 
+body.dark-mode textarea {
+    color: inherit;
+    background-color: inherit;
+}
+

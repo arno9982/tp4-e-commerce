@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +16,36 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Créer un utilisateur ADMIN
+        User::factory()->create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'is_admin' => true,
+        ]);
 
+        // Créer un utilisateur TEST normal (non-admin)
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'user@example.com',
+            'is_admin' => false,
         ]);
+
+        // Créer les catégories
+        $categories = [
+            'ROBES & JUPES',
+            'T-SHIRTS & HAUTS',
+            'JEANS & PANTALONS',
+            'VESTES & MANTEAUX',
+            'CHAUSSURES FEMME',
+            'CHAUSSURES HOMME',
+            'ACCESSOIRES',
+        ];
+
+        foreach ($categories as $categoryName) {
+            Category::create(['name' => $categoryName]);
+        }
+
+        // Appeler le seeder des produits
+        $this->call(ProductSeeder::class);
     }
 }

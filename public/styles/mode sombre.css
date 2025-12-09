@@ -1,0 +1,22 @@
+/* Mode clair par défaut */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mode sombre appliqué à tout le body */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* S'assurer que tous les éléments héritent la couleur et fond */
+body.dark-mode *, 
+body.dark-mode a, 
+body.dark-mode button, 
+body.dark-mode input, 
+body.dark-mode textarea {
+    color: inherit;
+    background-color: inherit;
+}
