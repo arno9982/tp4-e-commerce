@@ -1,0 +1,661 @@
+/* --- Réinitialisation et configuration globale --- */
+
+.main-header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    /* Une bordure subtile comme dans l'image */
+    border-bottom: 1px solid #222; 
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-logo {
+    font-size: 1.8rem; /* 28px */
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    flex-shrink: 0; /* Empêche le logo de rétrécir */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espace entre les liens */
+    flex-grow: 1; /* Permet au menu de prendre l'espace central */
+}
+
+.nav-menu li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem; /* 15px */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Style pour le lien survolé ou actif */
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #fff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espace entre recherche et icônes */
+    flex-shrink: 0;
+}
+
+.nav-search {
+    display: flex;
+}
+
+.nav-search input {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #444;
+    background-color: #111;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    font-family: 'Poppins', sans-serif;
+    /* Largeur visible sur l'image */
+    min-width: 200px; 
+}
+
+.nav-search input::placeholder {
+    color: #888;
+}
+
+.nav-search button {
+    padding: 8px 12px;
+    border: none;
+    /* Le bleu du site (comme le bouton "Subscribe") */
+    background-color: #0d6efd; 
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 0.9rem;
+}
+
+.nav-icon {
+    color: #fff;
+    font-size: 1.2rem; /* 19px */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-icon:hover {
+    color: #0d6efd; /* Changement au survol */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Classes d'arrière-plan --- */
+.bg-light {
+    background-color: #fff;
+    color: #333;
+}
+
+.bg-dark {
+    background-color: #000;
+    color: #fff;
+}
+
+/* --- Titre de la page "About Us" --- */
+.page-title-section {
+    padding: 40px 0 20px 0;
+}
+
+.page-title-section h1 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+}
+
+/* --- Sections "About" (2 colonnes) --- */
+.about-section {
+    padding: 60px 0;
+}
+
+.two-col-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px; /* Espace entre texte et image */
+}
+
+.two-col-layout .col-text {
+    flex-basis: 45%; /* Le texte prend un peu moins de place */
+}
+
+.two-col-layout .col-image {
+    flex-basis: 55%;
+}
+
+/* Ensure column images share the same visible dimensions */
+.two-col-layout .col-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.two-col-layout .col-image img{
+    width: 100%;
+    height: 360px; /* unified visible height on desktop */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px){
+    .two-col-layout .col-image img{
+        height: 260px;
+    }
+}
+@media (max-width: 480px){
+    .two-col-layout{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .two-col-layout .col-image img{
+        height: 180px;
+        width: 100%;
+    }
+}
+
+/* Inverse l'ordre pour les lignes alternées */
+.two-col-layout.row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Style du texte dans les colonnes */
+.col-text .large-title {
+    font-size: 3rem; /* 48px */
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-title .icon {
+    font-size: 1.8rem; /* 28px */
+    color: #0d6efd; /* Bleu standard (type Bootstrap) */
+}
+
+.section-title h2 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.col-text p {
+    font-size: 0.95rem; /* 15px */
+    color: #666;
+}
+
+/* Ajustement couleur pour fond sombre */
+.bg-dark .col-text p {
+    color: #ccc;
+}
+.bg-dark .section-title h2,
+.bg-dark .large-title {
+    color: #fff;
+}
+
+/* --- Section Témoignage --- */
+.testimonial-section {
+    background-color: #f8f9fa; /* Fond gris très clair / bleu pâle */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.testimonial-section .icon-quote {
+    font-size: 2.5rem;
+    color: #ced4da; /* Gris clair pour la citation */
+    margin-bottom: 15px;
+}
+
+.testimonial-section blockquote {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 500;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    color: #212529; /* Noir doux */
+    font-style: italic; /* L'image montre un style italique */
+}
+
+.testimonial-section .author {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+}
+/*--section pour les logos diffilant--*/
+.logo-visuel{
+    overflow: hidden;
+    padding: 20px 0;
+    transition: all 0.3s ease-out ;
+
+}
+.logo-visuel .image {
+    padding: 80px 0;
+    display: flex;
+    overflow: hidden;
+    -ms-overflow-style: none;
+   scrollbar-width: none;
+   flex-wrap: nowrap;
+    justify-content: space-between;
+   
+}
+
+/* Our brands styling: make title prominent and logos larger */
+.brand {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    color: #0d6efd;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.logo-visuel{
+    background: linear-gradient(180deg, rgba(13,110,253,0.03) 0%, rgba(255,255,255,0) 100%);
+}
+
+.logo-visuel .image{
+    padding: 30px 0;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.logo-visuel .image img{
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.95;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.08));
+}
+.logo-visuel .image img:hover{
+    transform: translateY(-6px) scale(1.03);
+    opacity: 1;
+}
+
+@media (max-width: 900px){
+    .brand{ font-size: 1.5rem; text-align: center; }
+    .logo-visuel .image img{ width: 110px; }
+}
+
+@media (max-width: 480px){
+    .brand{ font-size: 1.25rem; }
+    .logo-visuel .image{ padding: 20px 0; gap: 0.75rem; }
+    .logo-visuel .image img{ width: 90px; }
+}
+
+/* New slider layout for infinite scroll */
+.logo-slider{
+    overflow: hidden;
+    width: 100%;
+}
+.logo-slider .logo-track{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    white-space: nowrap;
+}
+.logo-slider .logo-track img{
+    flex: 0 0 140px;
+    width: 140px;
+}
+
+/* Animation: move left by the width of one track (track duplicated in DOM) */
+.logo-slider .logo-track{
+    animation: scroll-left 20s linear infinite;
+}
+.logo-slider .logo-track[aria-hidden="true"]{
+    margin-left: 2rem; /* small separation between sequences */
+}
+
+.logo-slider:hover .logo-track{ animation-play-state: paused; }
+
+@keyframes scroll-left{
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 900px){
+    .logo-slider .logo-track img{ width: 110px; flex: 0 0 110px; }
+}
+@media (max-width: 480px){
+    .logo-slider .logo-track img{ width: 80px; flex: 0 0 80px; }
+}
+
+/* Center brand title and keep harmonized color */
+.brand{
+    display: block;
+    text-align: center;
+    margin: 1rem auto 0.75rem auto;
+    color: #0d6efd; /* matches site accent used in this stylesheet */
+}
+
+/* --- Section "Why Us" (3 colonnes) --- */
+.why-us-section {
+    padding: 80px 0;
+}
+
+.three-col-layout {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 30px;
+}
+
+.col-feature {
+    flex: 1;
+}
+
+.col-feature .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #e7f1ff; /* Fond bleu très pâle */
+    color: #0d6efd; /* Icône bleue */
+    display: grid;
+    place-items: center;
+    font-size: 2.2rem;
+    margin: 0 auto 20px auto;
+}
+
+.col-feature h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.col-feature p {
+    font-size: 0.95rem;
+    color: #666;
+    padding: 0 10px; /* Empêche le texte d'être trop large */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0 30px 0;
+}
+
+.newsletter-signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #333;
+}
+
+.newsletter-signup h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.newsletter-signup form {
+    display: flex;
+}
+
+.newsletter-signup input[type="email"] {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px 0 0 5px;
+    min-width: 300px;
+}
+
+.newsletter-signup button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    background-color: #0d6efd;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Pour la responsivité */
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.footer-col .social-icons a {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+}
+
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+
+    /* Empile les sections à 2 colonnes */
+    .two-col-layout,
+    .two-col-layout.row-reverse {
+        flex-direction: column; /* Met les colonnes l'une sur l'autre */
+        gap: 30px;
+    }
+
+    /* Empile la section "Why Us" à 3 colonnes */
+    .three-col-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* Ajuste les titres pour les petits écrans */
+    .col-text .large-title {
+        font-size: 2.5rem; /* 40px */
+    }
+    .section-title h2 {
+        font-size: 2rem; /* 32px */
+    }
+    .testimonial-section blockquote {
+        font-size: 1.2rem;
+    }
+
+    /* Empile le formulaire d'inscription du footer */
+    .newsletter-signup {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .newsletter-signup form {
+        width: 100%;
+    }
+
+    .newsletter-signup input[type="email"] {
+        min-width: 0;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-signup button {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    /* Empile les colonnes du footer */
+    .footer-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+.col-feature .icon-wrapper {
+    /* Ajoute une transition douce */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Quand on survole la colonne... */
+.col-feature:hover .icon-wrapper {
+    /* ...on "soulève" légèrement l'icône */
+    transform: translateY(-5px);
+    
+    /* ...et on ajoute une ombre de la couleur de votre marque */
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2); 
+}
+
+
+
+/* Ligne de séparation (entre les colonnes et le bas) */
+.footer-divider {
+    border-top: 1px solid #333;
+    margin-top: 30px; /* Espace au-dessus */
+    padding-top: 30px; /* Espace en-dessous */
+}
+
+/* Barre inférieure (Copyright + Paiement) */
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Pour le responsive mobile */
+    gap: 15px;
+}
+
+.copyright {
+    font-size: 0.85rem; /* 13px */
+    color: #aaa;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 15px; /* Espace entre les icônes de paiement */
+    font-size: 2rem; /* 32px */
+    color: #aaa;
+}
+.logo-visuel {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    background: #fff; /* optionnel */
+  }
+  
+  .logo-visuel .image {
+    display: flex;
+    gap: 40px; /* espace entre logos */
+    animation: scroll 20s linear infinite;
+    /* duplication visuelle pour que le défilement soit sans coupure */
+    width: max-content;
+    
+  }
+  
+  .logo-visuel .image img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  /* Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+
+
+
+
+
+
+  
+
+  

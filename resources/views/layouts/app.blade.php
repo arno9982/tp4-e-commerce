@@ -7,30 +7,35 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        
+        <link rel="stylesheet" href="{{ asset('styles/normalize-perso.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/home.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/about.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/dashboard.css') }}">
+        
+        <link rel="stylesheet" href="{{ asset('styles/responsive.css') }}">
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <body>
+        
+        @include('partials.header')
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+        <main>
+            @yield('content')
+        </main>
+        
+        @include('partials.footer')
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+      
+        <script src="{{ asset('javascript/responsive.js') }}" defer></script>
+        <script src="{{ asset('javascript/product.js') }}" defer></script>
+        @stack('scripts')
     </body>
 </html>
