@@ -85,4 +85,4 @@ Route::middleware('auth')->group(function () {
 | 3. Routes d'Authentification (Générées par Breeze - T5)
 |--------------------------------------------------------------------------
 */
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

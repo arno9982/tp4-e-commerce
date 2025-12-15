@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="{{ asset('css/home.css') }}">
         <link rel="stylesheet" href="{{ asset('css/product.css') }}">
         <link rel="stylesheet" href="{{ asset('styles/responsive.css') }}">
+
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
     <body class="font-sans antialiased">
