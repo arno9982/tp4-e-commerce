@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+       
         
         <link rel="stylesheet" href="{{ asset('styles/normalize-perso.css') }}">
         <link rel="stylesheet" href="{{ asset('styles/base.css') }}">
@@ -22,20 +22,21 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
-        
+
+    <body class="font-sans antialiased">
+
+        {{-- HEADER --}}
         @include('partials.header')
 
         <main>
             @yield('content')
         </main>
-        
+
+     {{-- FOOTER --}}
         @include('partials.footer')
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-      
-        <script src="{{ asset('javascript/responsive.js') }}" defer></script>
+        <!-- JS -->
         <script src="{{ asset('javascript/product.js') }}" defer></script>
-        @stack('scripts')
+        <script src="{{ asset('javascript/responsive.js') }}" defer></script>
     </body>
 </html>

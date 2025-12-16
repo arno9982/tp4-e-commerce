@@ -10,6 +10,31 @@ use Illuminate\Support\Facades\Route;
 | 1. Routes Publiques (Catalogue, Accueil & Newsletter)
 |--------------------------------------------------------------------------
 */
+// CONTACT
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+// ABOUT
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+// TERMS & CONDITIONS
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');
+
+// BLOG (liste des articles)
+Route::get('/blog', function () {
+    return view('blog.index');
+})->name('blog.index');
+
+// BLOG (article individuel si tu veux)
+Route::get('/blog/{slug}', function ($slug) {
+    return view('blog.show', compact('slug'));
+})->name('blog.show');
+
 
 // Page d'accueil
 Route::get('/', function () {
