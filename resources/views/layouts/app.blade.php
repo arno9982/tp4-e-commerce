@@ -7,15 +7,17 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="{{ asset('css/normalize-perso.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/base.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/product.css') }}">
+       
+        
+        <link rel="stylesheet" href="{{ asset('styles/normalize-perso.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/home.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/about.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/dashboard.css') }}">
+        
         <link rel="stylesheet" href="{{ asset('styles/responsive.css') }}">
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])

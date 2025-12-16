@@ -16,17 +16,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Créer un utilisateur test
+        // Créer un utilisateur ADMIN
+        User::factory()->create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'is_admin' => true,
+        ]);
+
+        // Créer un utilisateur TEST normal (non-admin)
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'user@example.com',
+            'is_admin' => false,
         ]);
 
         // Créer les catégories
-        Category::create(['name' => '']);
-        Category::create(['name' => 'Homme']);
-        Category::create(['name' => 'Jeans']);
-        Category::create(['name' => 'Vêtements']);
+        $categories = [
+            'ROBES & JUPES',
+            'T-SHIRTS & HAUTS',
+            'JEANS & PANTALONS',
+            'VESTES & MANTEAUX',
+            'CHAUSSURES FEMME',
+            'CHAUSSURES HOMME',
+            'ACCESSOIRES',
+        ];
+
+        foreach ($categories as $categoryName) {
+            Category::create(['name' => $categoryName]);
+        }
 
         // Appeler le seeder des produits
         $this->call(ProductSeeder::class);

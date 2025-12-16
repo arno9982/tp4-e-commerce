@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root{
+    --font: 'Inter', 'Montserrat', Georgia, 'Times New Roman', Times, serif;
+    --special-font : 'Playfair Display', 'Montserrat', Georgia, 'Times New Roman', Times, serif;
+    --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+    --spe-btn-padding: 0.5rem 1rem 0.7rem 1rem;
+    /********* THEME COLORS **********/
+    --bg-dark: hsl(220, 3%, 90%);
+    --bg: hsl(220, 3%, 95%);
+    --bg-light: hsl(220, 3%, 100%);
+    --text: hsl(220, 3%, 5%);
+    --text-muted: hsl(220, 3%, 30%);
+    --text-muted-light: hsl(220, 3%, 75%);
+    --border: hsl(220, 3%, 30%);
+}
+
+/* ========================================= */
+/* DARK MODE (Surcharge des Variables) */
+/* ========================================= */
+body.dark-mode {
+    /* Couleurs Sombres */
+    --bg-light: hsl(220, 3%, 18%); /* Cartes, Header, Modale */
+    --bg: hsl(220, 3%, 12%);     /* Arrière-plan général de la page */
+    --bg-dark: hsl(220, 3%, 8%); /* Arrière-plan des blocs promo/menu */
+    
+    --text: hsl(220, 3%, 95%);   /* Texte principal (clair) */
+    --text-muted: hsl(220, 3%, 70%); /* Texte secondaire (plus clair) */
+    --text-muted-light: hsl(220, 3%, 30%); /* Lignes de séparation (sombre) */
+    --border: hsl(220, 3%, 60%);
+    --main-accent: #bb86fc; /* Accent violet pour le dark mode */
+}
+/* Normalize perso */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+    scroll-behavior: smooth;
+    /* Definition de mon rem et du scroll-behaviour smooth partout */
+}
+html, body{
+    height: 100%;
+}
+body{
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+}
+/* Css contact*/
+.contact-section {
+ 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    gap: 65px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact-left {
+    flex: 1 1 50%;
+}
+
+.contact-left h2 {
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-left p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #4b5563;
+}
+
+
+.contact-form .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-form .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.contact-form input,
+.contact-form textarea {
+ 
+    color: #111827;             
+    padding: 12px;
+    font-size: 17px;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    width: 100%;
+    color: #111827;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-form input:focus
+{
+    outline: none;
+    border-color: #2563eb;  /* contour bleu au focus */
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #2563eb;  /* contour bleu au focus */
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+    background-color: #e3eaf9;
+}
+
+.contact-form button {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 32px; /* réduit la taille */
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 17px; /* ajuste la taille du texte */
+	width: auto; 
+    align-self: flex-start;
+}
+
+.contact-form button:hover {
+    background-color: #1e40af;
+}
+
+.contact-right {
+    flex: 0 0 40%;
+    background-color: #f3f4f6;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+	margin-top: 150px;
+	margin-left: 30px;
+}
+
+.contact-right .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.contact-right i {
+    font-size: 20px;
+    
+    margin-top: 2px;
+}
+
+.contact-right a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+
+.footer-section {
+    display: flex;
+    justify-content: space-around; /* espace égal entre les cartes */
+    
+    padding: 60px 20px;
+    flex-wrap: wrap;
+}
+
+.footer-card {
+    text-align: center;
+    max-width: 250px;
+    margin-bottom: 20px; /* espace si plusieurs lignes */
+}
+
+.footer-card i {
+    font-size: 30px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.footer-card h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-card p {
+    font-size: 17px;
+    color: #4b5563;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .contact-section {
+        flex-direction: column;
+    }
+    .contact-left, .contact-right {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .contact-form .form-row {
+        flex-direction: column;
+    }
+    .footer-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+  }
+  /*fin css contact*/
+
+button{
+    cursor: pointer;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    transition: scale 0.1s ease;
+    font-family: inherit;
+    font-size: inherit;
+    scale: 1;
+}
+ul li{
+    list-style-type: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+input, select, textarea{
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+/* Scrollbars */
+/* Pour WebKit (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; /* Pour scroll horizontal */
+}
+
+*::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+/* Pour Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #eee;
+}
+
+/****************/
+/* Le container (#root) */
+#root {
+  /* max-width: 1440px; */
+  height: 100%;/* Very important for relatives values */
+  min-height: 100%;
+  margin: 0 auto;
+}
+/* gestion des erreurs */
+/* Ajout CSS pour visuellement indiquer les erreurs */
+.contact-form .form-group input.error,
+.contact-form .form-group textarea.error {
+    border: 1px solid red; /* Bordure rouge pour l'erreur */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Ombre légère pour plus de visibilité */
+}
+/* Styles de la Modale de Message */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Reste en place même en scrollant */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Active le défilement si nécessaire */
+    background-color: rgba(0,0,0,0.7); /* Fond semi-transparent */
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #f3f4f6; /* Contenu clair (peut changer avec le thème) */
+    margin: 15% auto; /* 15% du haut et centré */
+    padding: 30px;
+    border: none;
+    width: 80%; /* Largeur de la modale */
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    transform: translateY(-50px); /* Pour l'animation d'apparition */
+    animation: slideDown 0.4s forwards;
+}
+
+/* Styles pour le succès (vert) */
+.modal-content.success {
+    border-top: 5px solid #4CAF50; /* Vert pour le succès */
+}
+/* Styles pour l'erreur (rouge) */
+.modal-content.error {
+    border-top: 5px solid #f44336; /* Rouge pour l'erreur */
+}
+
+/* Bouton de fermeture */
+.close-button {
+    color: #fefefe;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+#modal-ok-button {
+    background-color: #333; /* Bouton avec la couleur principale du site */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#modal-ok-button:hover {
+    background-color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideDown {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ========================================= */
+/* APPLICATION DES COULEURS GENERALES */
+/* ========================================= */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+header, .modal-content, .footer-card {
+    background-color: var(--bg-light);
+    color: var(--text);
+}
+
+.promo-box, .menu-box, footer {
+    background-color: var(--bg-dark);
+}
+/*contact right*/
+.contact-right {
+    background-color: var(--bg-light);
+    color: var(--text);
+}
+
+/* Input / Textarea */
+ input[type="email"], input[type="tel"] {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    border: 1px solid var(--text-muted-light);
+}
+input[type="text"]{
+     color: var(--text);
+     
+}
+.form-group input[type="text"]{
+     border: 1px solid var(--text-muted-light);
+     background-color: var(--bg-dark);
+}
+textarea{
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--text-muted-light);
+}
+/* Liens / Icônes */
+a, .fas, .fab, svg {
+    color: var(--text);
+}
+/* Boutons */
+i {    
+
+    color: var(--text);
+}
+
+
+/* Surcharge des erreurs du formulaire pour qu'elles restent visibles */
+.contact-form .form-group input.error,
+.contact-form .form-group textarea.error {
+    border: 1px solid red; 
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); 
+}

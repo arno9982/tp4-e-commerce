@@ -28,12 +28,11 @@
                 <div class="links-box">
                     <p class="links-title">Useful Links</p>
                     <p class="useful-links">
-                       <a href="../index.html">Home</a>
-                        <a href="product.html"  class="active-link">Products</a>
+                       <a href="../index.html" class="active-link">Home</a>
+                        <a href="product.html">Products</a>
                         <a href="contact.html">Contact</a>
                         <a href="about.html">About us</a>
                         <a href="terms.html">Terms and conditions</a>
-                        <a href="dashboard.html">Dashboard</a>
                     </p>
                 </div>
                 <div class="infos-box">
@@ -49,7 +48,7 @@
                             <i class="fas fa-location"></i>&nbsp;&nbsp;Central Market. Yaounde, Cameroon
                         </span>
                         <span>
-                            <i class="fas fa-calendar"></i>&nbsp;&nbsp;Monday-Saturday: 6:00 AM - 8:00 AM
+                            <i class="fas fa-calendar"></i>&nbsp;&nbsp;Monday-Saturday: 6:00 AM - 8:00 AM 
                         </span>
                     </p>
                 </div>

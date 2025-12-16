@@ -1,0 +1,83 @@
+main .container{
+    background-color: white;
+    padding: 2rem 2rem;
+    display: flex;
+    gap: 2rem;
+}
+.image-box{
+    flex: 1;
+    min-height: 400px;
+    max-height: 500px;
+}
+.image-box img{
+    width: 100%;
+    object-fit: cover;
+}
+.details-box{
+    flex: 1.25;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1.5rem;
+}
+.details-box .stars{
+    display: flex;
+    gap: 0.5rem;
+}
+.details-box .stars i{
+    color: gold;
+}
+.details-box .stars i:last-child{
+    color: hsl(0, 0%, 83%, 80%);
+}
+.details-box .description{
+    color: var(--text-muted);
+}
+.details-box .price{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.details-box .in-stock{
+    color: rgb(0, 186, 0);
+    display: flex;
+    align-items: center;
+}
+.details-box .in-stock svg{
+    width: 1rem;
+    height: 1rem;
+}
+.options{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.details-box button{
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+.details-box button svg{
+    width: 2rem;
+    height: 2rem;
+}
+.details-box .btn-add-cart{
+    background-color: var(--accent);
+    color: white;
+}
+.details-box .btn-add-cart:hover{
+    background-color: var(--accent-light);
+}
+.details-box .btn-catalog{
+    border: 2px solid black;
+    color: black;
+}
+.details-box .btn-catalog:hover{
+    background-color: black;
+    color: white;
+}

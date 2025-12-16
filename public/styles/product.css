@@ -1,0 +1,664 @@
+/* Fichier : styles.css (Mis à jour SANS BORDURES ARRONDIS) */
+
+/* --------------------
+   Réinitialisation de base & Typographie
+   -------------------- */
+/* Vous devez vous assurer d'ajouter les styles pour *, body, etc., 
+   si vous n'avez inclus que les blocs ci-dessus dans votre fichier. */
+
+.product-page-main {
+    display: flex; /* Active la disposition flexible */
+    max-width: 1400px; /* Grande largeur pour les cartes */
+    margin: 30px auto; /* Centre le contenu */
+    padding: 0 20px;
+    gap: 30px; /* Espace entre la sidebar et les produits */
+    align-items: flex-start; /* Aligne le haut du contenu */
+}
+
+/* --------------------
+   Sidebar (Violet - NON ARRONDI)
+   -------------------- */
+.sidebar {
+    width: 280px; /* Largeur pour la barre latérale */
+    background-color: #8f7a9d; /* Violet foncé */
+    color: white;
+    padding: 25px;
+    /* border-radius: 10px; <-- SUPPRIMÉ */
+    flex-shrink: 0; /* Empêche la sidebar de rétrécir */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Rendre la sidebar fixe en scrollant */
+    top: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: background-color 0.2s, padding-left 0.2s;
+}
+
+.category-list a:hover {
+    background-color: #8e24aa; /* Violet légèrement plus clair au survol */
+    padding-left: 5px;
+    /* border-radius: 4px; <-- SUPPRIMÉ */
+}
+
+.sidebar hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+/* Styles pour les filtres de Couleur */
+.color-options {
+    display: flex;
+    gap: 10px;
+}
+.color-swatch {
+    width: 20px;
+    height: 20px;
+    /* border-radius: 50%; <-- SUPPRIMÉ (devient carré) */
+    cursor: pointer;
+    border: 2px solid white;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.color-swatch.black { background-color: black; }
+.color-swatch.white { background-color: #f0f0f0; border-color: #333; }
+.color-swatch.red { background-color: #c0392b; }
+.color-swatch.blue { background-color: #2980b9; }
+.color-swatch:hover {
+    transform: scale(1.2);
+    border-color: gold;
+}
+
+/* Styles pour les filtres de Taille */
+.size-options label {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    /* border-radius: 4px; <-- SUPPRIMÉ */
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.size-options input[type="radio"] {
+    display: none;
+}
+.size-options input[type="radio"]:checked + label {
+    background-color: #8e24aa;
+    font-weight: bold;
+}
+
+/* --------------------
+   Contenu Principal et Tri
+   -------------------- */
+.product-list-container {
+    flex-grow: 1; /* Occupe l'espace restant */
+}
+
+.product-list-container h1 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #444;
+}
+
+.sort-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.sort-bar p {
+    font-size: 0.95em;
+    color: #666;
+}
+.sort-bar select {
+    padding: 8px 12px;
+    /* border-radius: 6px; <-- SUPPRIMÉ */
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+/* --------------------
+   Grille des produits (CSS Grid)
+   -------------------- */
+.product-grid {
+    display: grid;
+    /* Crée 3 colonnes flexibles, minimum 300px chacune */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 40px;
+}
+
+/* Style de la carte de produit (l'élément cliquable - NON ARRONDI) */
+.product-card {
+    background-color: white;
+    /* border-radius: 10px; <-- SUPPRIMÉ */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; 
+    text-align: left; 
+}
+
+.product-card:hover {
+    transform: translateY(-8px); /* Effet de soulèvement */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Lien de la carte (rend toute la carte cliquable) */
+.product-card .product-link {
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+    height: 100%; 
+}
+
+.product-card img {
+    width: 100%; 
+    height: 350px; /* Hauteur fixe pour l'image */
+    object-fit: cover; /* Recadre l'image sans étirer */
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.card-details {
+    padding: 15px;
+}
+
+.category-tag {
+    font-size: 0.75em;
+    color: #999;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.product-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    font-weight: 500;
+    /* Gestion des textes trop longs */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.product-card .price {
+    font-size: 1.6em;
+    color: #c2185b; /* Rouge/Bourgogne pour le prix */
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* --------------------
+   Styles des Étoiles (Rating)
+   -------------------- */
+.product-rating {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.product-rating .full {
+    color: gold; 
+    letter-spacing: 1px;
+}
+
+.product-rating .empty {
+    color: #ccc; 
+    letter-spacing: 1px;
+}
+
+.product-rating .review-count {
+    font-size: 0.8em;
+    color: #777;
+    margin-left: 5px;
+}
+
+/* --------------------
+   Pagination
+   -------------------- */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #333;
+    padding: 10px 18px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    /* border-radius: 6px; <-- SUPPRIMÉ */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination a.active {
+    background-color: #6a1b9a;
+    color: white;
+    border: 1px solid #6a1b9a;
+    font-weight: bold;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #eee;
+}
+
+main .container{
+    background-color: white;
+    padding: 2rem 2rem;
+}
+.container h1{
+    margin-bottom: 2rem;
+}
+.cart-content{
+    display: flex;
+    gap: 2rem;
+}
+.cart-box{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.cart-summary {
+    background-color: var(--bg);
+    min-width: 320px;
+    max-height: 400px;
+    padding: 1rem 1rem;
+    font-weight: bold;
+}
+.cart-summary h2{
+    margin-bottom: 2rem;
+}
+.cart-summary .summary-content > div{
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-summary .summary-content .total-price{
+    font-size: 1.25rem;
+}
+.cart-summary .summary-content .btn-proceed{
+    color: white;
+    background-color: var(--accent);
+    border-radius: 2rem;
+    padding: 1rem 1.5rem;
+    min-width: 120px;
+    font-weight: bold;
+    margin: 1rem auto;
+}
+.cart-summary .summary-content .btn-proceed:hover{
+    background-color: var(--accent-light);
+}
+.cart-options{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+.cart-options button{
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+}
+.cart-options .btn-continue{
+    border: 2px solid var(--text-muted);
+    color: var(--text-muted);
+}
+.cart-options .btn-clear{
+    color: white;
+    background-color: black;
+}
+
+table{
+    border-collapse: collapse;
+}
+table tbody img{
+    width: 10rem;
+    aspect-ratio: 1;
+}
+table tbody td, table thead th{
+    border-bottom: 1px solid var(--text-muted-light);
+    padding: 0.5rem 1rem;
+    min-width: 120px;
+    max-width: 200px;
+}
+table tbody tr td:first-child, table thead tr th:first-child{
+    padding-left: 0;
+}
+table tbody tr td:last-child, table thead tr th:last-child{
+    padding-right: 0;
+    min-width: 0;
+    width: 64px;
+}
+table tbody tr td:last-child button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.25rem;
+    border-radius: 50%;
+    color: var(--text-muted);
+    border: 2px solid var(--text-muted);
+}
+table tbody tr td:last-child button:hover{
+    background-color: var(--bg);
+}
+table thead th{
+    text-align: left;
+}
+table tbody input{
+    width: 96px;
+    background-color: var(--bg);
+    padding: 0.5rem 0.5rem;
+    text-align: center;font-weight: bold;
+}
+table tbody tr td:nth-child(3), table tbody tr td:nth-child(5){
+    font-weight: bold;
+    text-align: right;
+}
+table tbody tr td:nth-child(3)::after, table tbody tr td:nth-child(5)::after{
+    content: ' XAF';
+}
+
+main .container{
+    background-color: white;
+    padding: 2rem 2rem;
+}
+.checkout-form{
+    display: flex;
+    gap: 1.5rem;
+}
+.checkout-form > div{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.checkout-first{
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.checkout-first h1{
+    font-size: 2rem;
+}
+.checkout-first button{
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    width: 120px;
+}
+.checkout-first button:hover{
+    background-color: var(--accent);
+    color: white;
+}
+.checkout-form input, .checkout-form select{
+    border: 1px solid var(--text-muted-light);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+}
+.checkout-form label{
+    font-weight: bold;
+    position: relative;
+}
+.checkout-form label::after{
+    content: ' ⋆';
+    color: rgb(250, 25, 25);
+}
+.checkout-form .payment-methods{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.checkout-form .payment-methods input{
+    display: none;
+}
+.checkout-form .payment-methods label::after{
+    content: '';
+    display: none;
+}
+.checkout-form .payment-methods label{
+    width: 132px;
+    aspect-ratio: 2.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--text-muted-light);
+}
+.checkout-form .payment-methods label:hover{
+   border: 2px solid var(--text-muted);
+   cursor: pointer;
+}
+.checkout-form .payment-methods img{
+    width: 120px;
+}
+.checkout-form .payment-methods input:checked ~ label{
+    border: 3px solid var(--accent-light);
+}
+
+.checkout-form button{
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    width: 50%;
+    margin: 0 auto;
+}
+.checkout-form .btn-checkout{
+    background-color: var(--accent);
+    color: white;
+    padding: 1.25rem 1rem;
+    border-radius: 2rem;
+    margin-top: 1rem;
+}
+.checkout-form .btn-checkout:hover{
+    background-color: var(--accent-light);
+}
+.checkout-form .btn-reset{
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+}
+
+main .container{
+    background-color: white;
+    padding: 2rem 2rem;
+    display: flex;
+    gap: 2rem;
+}
+.image-box{
+    flex: 1;
+    min-height: 400px;
+    max-height: 500px;
+}
+.image-box img{
+    width: 100%;
+    object-fit: cover;
+}
+.details-box{
+    flex: 1.25;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1.5rem;
+}
+.details-box .stars{
+    display: flex;
+    gap: 0.5rem;
+}
+.details-box .stars i{
+    color: gold;
+}
+.details-box .stars i:last-child{
+    color: hsl(0, 0%, 83%, 80%);
+}
+.details-box .description{
+    color: var(--text-muted);
+}
+.details-box .price{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.details-box .in-stock{
+    color: rgb(0, 186, 0);
+    display: flex;
+    align-items: center;
+}
+.details-box .in-stock svg{
+    width: 1rem;
+    height: 1rem;
+}
+.options{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.details-box button{
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+.details-box button svg{
+    width: 2rem;
+    height: 2rem;
+}
+.details-box .btn-add-cart{
+    background-color: var(--accent);
+    color: white;
+}
+.details-box .btn-add-cart:hover{
+    background-color: var(--accent-light);
+}
+.details-box .btn-catalog{
+    border: 2px solid black;
+    color: black;
+}
+.details-box .btn-catalog:hover{
+    background-color: black;
+    color: white;
+}
+/* Styles pour les tailles des produits */
+.product-sizes  {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 8px 0;
+    flex-wrap: wrap;
+}
+
+.size-label {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #555;
+    margin-right: 4px;
+}
+
+.size-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.size-badge:hover {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+    transform: translateY(-1px);
+}
+.apply-filters-btn:hover{background-color: #f5c2fb;
+    border-color: #bbb;
+    transform: translateY(-1px);}
+.apply-filters-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #8e24aa;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+    .product-sizes {
+        gap: 4px;
+    }
+    
+    .size-badge {
+        padding: 2px 6px;
+        font-size: 0.75em;
+    }
+    
+    .size-label {
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+
+/* Mode clair par défaut */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mode sombre appliqué à tout le body */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* S'assurer que tous les éléments héritent la couleur et fond */
+body.dark-mode *, 
+body.dark-mode a, 
+body.dark-mode button, 
+body.dark-mode input, 
+body.dark-mode textarea {
+    color: inherit;
+    background-color: inherit;
+}
